@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inscripción al torneo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="tarjeta">
+    <h1>Inscríbete al torneo</h1>
+    <p class="subtitulo">Rellena tus datos y elige dónde y cuándo quieres competir. Los campos con * son obligatorios.</p>
+
+    <form id="form-inscripcion" action="#" method="post">
+
+      <fieldset>
+        <legend>Datos personales</legend>
+
+        <div class="campo">
+          <label class="req" for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Ana García López" autocomplete="name" required>
+        </div>
+
+        <div class="campo">
+          <label class="req" for="correo">Correo electrónico</label>
+          <input type="email" id="correo" name="correo" placeholder="ana@ejemplo.com" autocomplete="email" required>
+        </div>
+
+        <div class="fila">
+          <div class="campo">
+            <label for="edad">Edad</label>
+            <input type="number" id="edad" name="edad" min="16" max="120" placeholder="16 o más">
+            <span class="ayuda">Edad mínima: 16 años.</span>
+          </div>
+          <div class="campo">
+            <label for="nacimiento">Fecha de nacimiento</label>
+            <input type="date" id="nacimiento" name="nacimiento" max="2010-11-18">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Tu cuenta de jugador</legend>
+
+        <div class="campo">
+          <label class="req" for="nickname">Nombre del jugador (nickname)</label>
+          <input type="text" id="nickname" name="nickname" minlength="3" maxlength="15" placeholder="ShadowFox" autocomplete="username" required>
+          <span class="ayuda">Entre 3 y 15 caracteres.</span>
+        </div>
+
+        <div class="campo">
+          <label class="req" for="contrasena">Contraseña de la cuenta</label>
+          <input type="password" id="contrasena" name="contrasena" minlength="8" autocomplete="new-password" required>
+          <span class="ayuda">Mínimo 8 caracteres.</span>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Torneo</legend>
+
+        <div class="campo">
+          <label for="videojuego">Videojuego del torneo</label>
+          <select id="videojuego" name="videojuego">
+            <option value="">Elige un videojuego</option>
+            <option value="lol">League of Legends</option>
+            <option value="valorant">Valorant</option>
+            <option value="cs2">Counter-Strike 2</option>
+            <option value="rocket-league">Rocket League</option>
+            <option value="fc">EA Sports FC</option>
+            <option value="fortnite">Fortnite</option>
+          </select>
+        </div>
+
+        <div class="campo">
+          <span class="etiqueta" id="lbl-plataforma">Plataforma</span>
+          <div class="opciones" role="radiogroup" aria-labelledby="lbl-plataforma">
+            <div class="opcion">
+              <input type="radio" id="plat-pc" name="plataforma" value="pc">
+              <label for="plat-pc">PC</label>
+            </div>
+            <div class="opcion">
+              <input type="radio" id="plat-ps" name="plataforma" value="playstation">
+              <label for="plat-ps">PlayStation</label>
+            </div>
+            <div class="opcion">
+              <input type="radio" id="plat-xbox" name="plataforma" value="xbox">
+              <label for="plat-xbox">Xbox</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="campo">
+          <span class="etiqueta" id="lbl-horario">Disponibilidad horaria</span>
+          <div class="opciones" role="group" aria-labelledby="lbl-horario">
+            <div class="opcion">
+              <input type="checkbox" id="hor-manana" name="horario" value="manana">
+              <label for="hor-manana">Mañana</label>
+            </div>
+            <div class="opcion">
+              <input type="checkbox" id="hor-tarde" name="horario" value="tarde">
+              <label for="hor-tarde">Tarde</label>
+            </div>
+            <div class="opcion">
+              <input type="checkbox" id="hor-noche" name="horario" value="noche">
+              <label for="hor-noche">Noche</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="campo">
+          <label for="comentarios">Comentarios adicionales</label>
+          <textarea id="comentarios" name="comentarios" placeholder="Cuéntanos tu equipo, tu rango o cualquier otra cosa que debamos saber."></textarea>
+        </div>
+      </fieldset>
+
+      <div class="normas">
+        <input type="checkbox" id="normas" name="normas" required>
+        <label for="normas">He leído y acepto las <a href="normas.html" target="_blank" rel="noopener">normas del torneo</a>.</label>
+      </div>
+
+      <div class="botones">
+        <button type="submit">Inscribirme</button>
+        <button type="reset">Limpiar formulario</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
