@@ -1,126 +1,116 @@
-:root {
-  --fondo-pagina: #3d829d;
-  --fondo-pagina-2: #4390cb;
-  --fondo-form: #f8f7fd;
-  --tinta: #000000;
-  --tinta-suave: #403d5c;
-  --linea: #d6d2ec;
-  --acento: #43bd3d;
-  --acento-oscuro: #31c56f;
-  --alerta: #e0345f;
-  --radio: 12px;
-}
-
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
+  body {
+  background-image:url('musiala.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 32px 16px;
-  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
-  color: var(--tinta);
-  line-height: 1.5;
-  background:
-  linear-gradient(rgba(140, 168, 185, 0.65), rgba(103, 145, 237, 0.65)),
-  url("musiala.jpg") center / cover no-repeat fixed;;
+  margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+
+  form {
+    background-color: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 25px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: left;
+  }
+
+  h1 {
+    text-align: center;
+    color: #91a599;
+  }
+  .subtitulo {
+  color: white;
 }
 
-.tarjeta {
-  width: 100%;
-  max-width: 640px;
-  background: var(--fondo-form);
-  border-radius: 20px;
-  padding: 36px 32px;
-  box-shadow: 0 24px 60px rgba(90, 93, 197, 0.45);
-}
+  fieldset {
+    border: 2px solid #22c55e;
+    border-radius: 10px;
+    padding: 15px;
+  }
 
-h1 { margin: 0 0 4px; font-size: 1.8rem; letter-spacing: -0.5px; }
-.subtitulo { margin: 0 0 24px; color: var(--tinta-suave); }
+  legend {
+    color: #166534;
+    font-weight: bold;
+  }
 
-fieldset {
-  border: 1.5px solid var(--linea);
-  border-radius: var(--radio);
-  padding: 18px 20px 8px;
-  margin: 0 0 20px;
-}
-legend { padding: 0 8px; font-weight: bold; color: var(--acento-oscuro); }
-
-.campo { margin-bottom: 16px; display: flex; flex-direction: column; }
-.fila { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
-
-label, .etiqueta { font-weight: bold; font-size: 0.92rem; margin-bottom: 6px; }
-.req::after { content: " *"; color: var(--alerta); }
-.ayuda { font-size: 0.8rem; color: var(--tinta-suave); margin-top: 4px; }
-
-input[type="text"], input[type="email"], input[type="password"],
-input[type="number"], input[type="date"], select, textarea {
-  width: 100%;
-  padding: 11px 14px;
-  font: inherit;
-  color: var(--tinta);
-  background: #fff;
-  border: 1.5px solid var(--linea);
-  border-radius: 10px;
-  outline: none;
-  transition: border-color .2s, box-shadow .2s;
-}
-textarea { resize: vertical; min-height: 96px; }
+  label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
 
 
-input:focus, select:focus, textarea:focus {
-  border-color: var(--acento);
-  box-shadow: 0 0 0 4px rgba(221, 9, 9, 0.2);
-}
-input:user-invalid, textarea:user-invalid { border-color: var(--alerta); }
+  input[type="radio"] + label,
+  input[type="checkbox"] + label,
+  .opcion {
+    display: inline;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
 
 
-.opciones { display: flex; flex-wrap: wrap; gap: 10px; }
-.opcion {
-  display: flex; align-items: center; gap: 8px;
-  padding: 9px 14px;
-  background: #fff;
-  border: 1.5px solid var(--linea);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: border-color .2s, background .2s;
-}
-.opcion label { margin: 0; font-weight: normal; cursor: pointer; }
-.opcion:hover { border-color: var(--acento); }
-.opcion:focus-within { border-color: var(--acento); box-shadow: 0 0 0 4px rgba(74, 201, 57, 0.2); }
-.opcion:has(input:checked) { background: #ebe8ff; border-color: var(--acento); }
-input[type="radio"], input[type="checkbox"] { accent-color: var(--acento); width: 17px; height: 17px; margin: 0; }
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin: 0 5px 0 0;
+    vertical-align: middle;
+  }
 
-.normas { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 22px; }
-.normas label { margin: 0; font-weight: normal; }
-.normas a { color: var(--acento-oscuro); font-weight: bold; }
-
-
-.botones { display: flex; gap: 12px; flex-wrap: wrap; }
-button {
-  font: inherit; font-weight: bold;
-  padding: 13px 26px;
-  border-radius: 999px;
-  border: 2px solid var(--acento);
-  cursor: pointer;
-  transition: transform .15s, background .2s, color .2s, box-shadow .2s;
-}
-button[type="submit"] { flex: 1; background: var(--acento); color: #fff; }
-button[type="submit"]:hover { background: var(--acento-oscuro); border-color: var(--acento-oscuro); transform: translateY(-2px); box-shadow: 0 8px 18px rgba(91, 75, 255, .4); }
-button[type="reset"] { background: transparent; color: var(--acento-oscuro); }
-button[type="reset"]:hover { background: var(--acento); color: #fff; transform: translateY(-2px); }
-button:active { transform: translateY(0); }
-button:focus-visible, a:focus-visible { outline: 3px solid var(--alerta); outline-offset: 3px; }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid gray;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
 
 
-.tarjeta h2 { font-size: 1.1rem; margin: 22px 0 6px; color: var(--acento-oscuro); }
-.tarjeta p, .tarjeta li { color: var(--tinta); }
-.volver { display: inline-block; margin-top: 24px; color: var(--acento-oscuro); font-weight: bold; }
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: green;
+    background-color: #f0fdf4;
+    outline: none;
+  }
 
-@media (max-width: 520px) {
-  .tarjeta { padding: 24px 18px; }
-  .fila { grid-template-columns: 1fr; }
-  button { width: 100%; }
+  button {
+    padding: 12px 20px;
+    margin-top: 20px;
+    margin-right: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #16a34a;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+
+  button:hover {
+    background-color: #14532d;
+  }
+
+  a {
+    color: #166534;
+  }
+
+  .pagina-normas h1,
+.pagina-normas h2,
+.pagina-normas p,
+.pagina-normas li {
+  color: white;
 }
